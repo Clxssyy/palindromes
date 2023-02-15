@@ -8,6 +8,7 @@
 #include "queue.hpp"
 
 Queue::Queue(int s) {
+
     front = -1;
     rear = -1;
     size = s;
@@ -15,11 +16,13 @@ Queue::Queue(int s) {
 }
 
 Queue::~Queue() {
+
     delete[] arr;
 }
 
 template <class T>
 void Queue::enQueue(T value) {
+
     if (rear == size - 1) {
         std::cout << "Queue is full" << std::endl;
     }
@@ -33,6 +36,7 @@ void Queue::enQueue(T value) {
 }
 
 void Queue::deQueue() {
+
     if (front == -1) {
         std::cout << "Queue is empty" << std::endl;
     }
@@ -46,6 +50,7 @@ void Queue::deQueue() {
 }
 
 void Queue::display() {
+
     if (front == -1) {
         std::cout << "Queue is empty" << std::endl;
     }

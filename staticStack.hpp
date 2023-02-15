@@ -7,7 +7,7 @@
 #ifndef STATICSTACK_HPP
 #define STATICSTACK_HPP
 
-#include "LinkedList.hpp"
+#include "linkedList.hpp"
 
 template <class T, int MAXSIZE>
 class StaticStack {
