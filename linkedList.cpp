@@ -11,6 +11,7 @@ LinkedList<T>::LinkedList() : head(nullptr) {}
 
 template <class T>
 LinkedList<T>::~LinkedList() {
+
     Node *current = head;
     while (current != nullptr) {
         Node *temp = current;
@@ -22,6 +23,7 @@ LinkedList<T>::~LinkedList() {
 
 template <class T>
 void LinkedList<T>::addNode(T value) {
+
     Node *newNode = new Node(value);
     if (head == nullptr) {
         head = newNode;
@@ -36,6 +38,7 @@ void LinkedList<T>::addNode(T value) {
 
 template <class T>
 void LinkedList<T>::deleteNode(T value) {
+
     Node *current = head;
     Node *previous = nullptr;
     while (current != nullptr && current->value != value) {
