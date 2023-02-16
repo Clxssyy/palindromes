@@ -21,8 +21,8 @@ private:
 public:
     // Constructor
     Queue(int s) {
-        front = 0;
-        rear = 0;
+        front = -1;
+        rear = -1;
         size = s;
         items = 0;
         arr = new T[s];
@@ -38,8 +38,8 @@ public:
     // enQueue a value into the queue
     void enQueue(T value) {
         if (items < size) {
-            arr[rear] = value;
             rear++;
+            arr[rear] = value;
             items++;
         } else {
             std::cerr << "Error: Queue is full" << std::endl;
@@ -52,8 +52,8 @@ public:
             std::cerr << "Error: Queue is empty" << std::endl;
             return T();
         } else {
-            T item = arr[front];
             front++;
+            T item = arr[front];
             items--;
             return item;
         }
