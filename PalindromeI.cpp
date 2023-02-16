@@ -9,7 +9,7 @@
 #include "queue.hpp"
 
 /*
-    Test a string to see if it's a palindrome
+    Test a string to see if it's a palindrome using an iterative solution
 
     @param[in] string being tested to see if it's a palindrome
     @return Number of passes before mismatch letters came up
