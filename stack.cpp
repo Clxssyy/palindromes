@@ -1,10 +1,10 @@
 /*
-    staticStack.cpp
+    stack.cpp
 
-    Implementation file for staticStack class
+    Implementation file for stack class
 */
 
-#include "staticStack.hpp"
+#include "stack.hpp"
 
 template <class T, int MAXSIZE>
 Stack<T, MAXSIZE>::Stack() : size(0) {}

@@ -10,4 +10,10 @@
 
 int PalindromeI::test_string(const std::string& s) {
 
+    const size_t SIZE = s.length();
+    StaticStack<char, SIZE> stack;
+
+    for (int i = 0; i < s.length(); i++) {
+
+    }
 }
