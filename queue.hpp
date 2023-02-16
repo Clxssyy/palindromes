@@ -19,6 +19,7 @@ private:
     T *arr;
 
 public:
+    // Constructor
     Queue(int s) {
         front = 0;
         rear = 0;
@@ -27,12 +28,14 @@ public:
         arr = new T[s];
     }
 
+    // Deconstructor
     ~Queue() {
         if (items > 0) {
             delete[] arr;
         }
     }
 
+    // enQueue a value into the queue
     void enQueue(T value) {
         if (items < size) {
             arr[rear] = value;
@@ -43,6 +46,7 @@ public:
         }
     }
 
+    // deQueue a value out of the queue
     T deQueue() {
         if (isEmpty()) {
             std::cerr << "Error: Queue is empty" << std::endl;
@@ -55,6 +59,7 @@ public:
         }
     }
 
+    // Print out the values in the queue
     void print() {
         if (isEmpty()) {
             std::cerr << "Error: Queue is empty" << std::endl;
@@ -68,6 +73,7 @@ public:
         }
     }
 
+    // Check if the queue is empty
     bool isEmpty() {
         if (items == 0) {
             return true;
