@@ -12,6 +12,9 @@ PalindromeR.o: PalindromeR.cpp
 palindrome.out: PalindromeI.o PalindromeR.o test_palindrome.cpp
 	${CC} ${FLAGS} test_palindrome.cpp *.o -o palindrome.out
 
+run: palindrome.out
+	./palindrome.out
+
 clean:  
 	rm -f *.o
 	rm -f *~
