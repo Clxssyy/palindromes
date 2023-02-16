@@ -6,6 +6,14 @@
 
 #include "PalindromeR.hpp"
 
+/*
+    Test a string to see if it's a palindrome using recursion
+
+    @param[in] string being tested to see if it's a palindrome
+    @return Int based on palindrome status
+    @retval -1 String is a palindrome
+    @retval 1 String is not a palindrome
+*/
 int PalindromeR::test_string(const std::string& s) {
 
     // base case testing: empty strings and single letters
