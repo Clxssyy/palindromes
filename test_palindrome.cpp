@@ -61,8 +61,11 @@ int main()
 
   // test 5: random palindromes so you cannot hard code them
   
-  for (int i = 0, len = rand_range, current = (rand() % (len / 2)) - 1; i < rand_range; ++i, len = rand_range, current = (rand() % (len / 2)) - 1)
+  for (int i = 0, len = rand_range, current = (rand() % (len / 2)) - 1; i < rand_range; ++i, len = rand_range, current = (rand() % (len / 2)) - 1) {
+    // DEBUGGING - See what the random palindrome status should be
+    // std::cout << "Status: " << current << '\n';
     assert(p->test_string(randPalindrome(len, current)) == current);
+  }
   std::cout << "Iter test 5 passed." << std::endl;
 
   std::cout << "\nAll Iterative Tests Complete!\n" << std::endl;

@@ -9,19 +9,35 @@
 
 #include "linkedList.hpp"
 
-template <class T, size_t MAXSIZE>
+template <class T>
 class Stack {
 private:
     LinkedList<T> list;
-    int size;
 
 public:
-    Stack();
-    bool push(T value);
-    bool pop();
-    T top();
-    bool isEmpty();
-    bool isFull();
+    Stack() {
+        LinkedList<T> list;
+    }
+
+    ~Stack() {
+
+    }
+
+    void push(T value) {
+        list.push(value);
+    }
+
+    T pop() {
+        return list.pop();
+    }
+
+    void print() {
+        list.print();
+    }
+
+    bool isEmpty() {
+        return list.isEmpty();
+    }
 };
 
 #endif

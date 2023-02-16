@@ -7,22 +7,74 @@
 #ifndef LINKEDLIST_HPP
 #define LINKEDLIST_HPP
 
-template <class T>
+#include <iostream>
+
+template <typename T>
 class LinkedList {
 private:
     struct Node {
-        T value;
-        Node *next;
-        Node(T nodeValue) : value(nodeValue), next(nullptr) {}
+        T data;
+        Node* next;
+        Node(T value) : data(value), next(nullptr) {}
     };
-    Node *head;
+    Node* head;
 
 public:
-    LinkedList();
-    ~LinkedList();
+    LinkedList() : head(nullptr) {}
 
-    void addNode(T value);
-    void deleteNode(T value);
+    ~LinkedList() {
+        Node* current = head;
+        while (current != nullptr) {
+            Node* next = current->next;
+            delete current;
+            current = next;
+        }
+    }
+
+    void push(T data) {
+        Node* new_node = new Node(data);
+        if (head == nullptr) {
+            head = new_node;
+        } else {
+            new_node->next = head;
+            head = new_node;
+        }
+    }
+
+    T pop() {
+        if (head == nullptr) {
+            std::cerr << "Error: List is empty" << std::endl;
+            return T();
+        } else {
+            T value = head->data;
+            Node* current = head;
+            head = current->next;
+            delete current;
+            return value;
+        }
+    }
+
+    void print() const {
+        if (head == nullptr) {
+            std::cerr << "Error: List is empty" << std::endl;
+            return;
+        }
+        Node* current = head;
+        std::cout << "Items in the list are: \n";
+        while (current != nullptr) {
+            std::cout << current->data << " ";
+            current = current->next;
+        }
+        std::cout << std::endl;
+    }
+
+    bool isEmpty() {
+        if (head == nullptr) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 };
 
 #endif
