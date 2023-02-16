@@ -34,8 +34,8 @@ public:
     }
 
     // Add a node to the front of the list
-    void push(T data) {
-        Node* new_node = new Node(data);
+    void push(T value) {
+        Node* new_node = new Node(value);
         if (head == nullptr) {
             head = new_node;
         } else {
