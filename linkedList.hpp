@@ -20,8 +20,10 @@ private:
     Node* head;
 
 public:
+    // Constructor
     LinkedList() : head(nullptr) {}
 
+    // Deconstructor
     ~LinkedList() {
         Node* current = head;
         while (current != nullptr) {
@@ -31,6 +33,7 @@ public:
         }
     }
 
+    // Add a node to the front of the list
     void push(T data) {
         Node* new_node = new Node(data);
         if (head == nullptr) {
@@ -41,6 +44,7 @@ public:
         }
     }
 
+    // Remove a node from the front of the list
     T pop() {
         if (head == nullptr) {
             std::cerr << "Error: List is empty" << std::endl;
@@ -54,6 +58,7 @@ public:
         }
     }
 
+    // Print out all values inside the list
     void print() const {
         if (head == nullptr) {
             std::cerr << "Error: List is empty" << std::endl;
@@ -68,6 +73,7 @@ public:
         std::cout << std::endl;
     }
 
+    // Check if the list is empty
     bool isEmpty() {
         if (head == nullptr) {
             return true;
